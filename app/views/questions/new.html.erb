@@ -1,0 +1,11 @@
+<%= form_with model: Question.new, url: {action: :create}, local: true do |f| %>
+<div>
+ <%= f.label :uname %>
+ <%= f.text_field :uname, id: 'user_name' %>
+</div>
+<div>
+ <%= f.label :content %>
+ <%= f.text_field :content, id: 'que_content' %>
+</div>
+ <%= f.submit %>
+<% end %>

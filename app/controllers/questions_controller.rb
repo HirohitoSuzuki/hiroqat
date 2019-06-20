@@ -7,7 +7,13 @@ class QuestionsController < ApplicationController
     end
 
     def create
-        question = Question.create(que_param)
+        Question.create(que_params)
+        redirect_to :action => "new"
+    end
+
+    def que_params
+        params.require(:question).permit(:uname, :content)
+    end
 
 
 end
