@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get '/box', to:'question#box'
-  root to:'question#box'
+  get '/box', to:'questions#box'
+  root to:'questions#box'
 end
