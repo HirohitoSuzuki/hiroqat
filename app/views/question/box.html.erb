@@ -1,4 +1,8 @@
 <h>質問箱</h>
 <ul>
-    <li>@hiro:テスト大変？</li>
+    <% @questions.each do |que| %>
+        <li>
+            @<%= que.uname %> : <%= que.content %>
+        </li>
+    <% end %>
 </ul>

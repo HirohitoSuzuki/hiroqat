@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uname: MyString
+  content: MyText
+  quetime: 2019-06-20 17:06:08
+
+two:
+  uname: MyString
+  content: MyText
+  quetime: 2019-06-20 17:06:08
