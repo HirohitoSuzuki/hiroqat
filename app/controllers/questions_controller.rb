@@ -1,6 +1,11 @@
 class QuestionsController < ApplicationController
     def box
-        @questions = Question.where(uname: params[:id])
+        q = Question.where(uname: params[:id])
+        if(q.empty?) then
+            render "que_empty"
+        else
+            @questions = q
+        end
     end
 
     def new
@@ -13,6 +18,9 @@ class QuestionsController < ApplicationController
 
     def que_params
         params.require(:question).permit(:uname, :content)
+    end
+
+    def que_empty
     end
 
 
