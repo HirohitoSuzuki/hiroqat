@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
     def box
-        @questions = Question.all
+        @questions = Question.where(uname: params[:id])
     end
 
     def new
