@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get '/new', to:'questions#new'
-  get "box/:id" => "questions#box"
+  get '/new/:id' => 'questions#new'
+  get '/box/:id' => 'questions#box'
   post '/questions/create', to:'questions#create'
-  root to:'questions#new'
+  root to:'questions#top'
 end

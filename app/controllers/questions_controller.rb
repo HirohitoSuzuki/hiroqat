@@ -9,19 +9,30 @@ class QuestionsController < ApplicationController
     end
 
     def new
+        @@uname = params[:id]
+        @uname = @@uname
+        # render plain: "#{@uname}さんの投稿ページです"
+    end
+
+    def top
     end
 
     def create
-        Question.create(que_params)
-        redirect_to :action => "new"
+        @q = Question.new(que_params)
+        if @q.save then
+            flash[:success] = "#{@@uname}さんに質問を投稿しました。"
+            redirect_to :action => "top"
+        else
+            render("posts/new/#{@@uname}")
+        end
     end
+
+    private
 
     def que_params
-        params.require(:question).permit(:uname, :content)
+        un = { :uname => @@uname }
+        params.require(:question).permit(:content).merge(un)
+        # params[:uname]=@uname
     end
-
-    def que_empty
-    end
-
 
 end
