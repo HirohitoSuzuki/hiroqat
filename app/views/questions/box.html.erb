@@ -3,6 +3,9 @@
     <% @questions.each do |que| %>
         <li>
             @<%= que.uname %> : <%= que.content %>
-        </li>
+            <a href="https://twitter.com/intent/tweet?text=<%= url_encode('<'+que.content+'>') %>&url=https://hiroqat.herokuapp.com/new/<%= que.uname %>" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow" class="twitter-link">
+                【質問に回答】
+            </a>
+        </li>       
     <% end %>
 </ul>

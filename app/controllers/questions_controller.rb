@@ -1,3 +1,4 @@
+require 'uri'
 class QuestionsController < ApplicationController
     def box
         q = Question.where(uname: params[:id])
