@@ -1,1 +1,5 @@
-<p>こんにちは。質問箱HIROQATです！！！！！！！！！</p>
+<%= form_with url: {action: :newbox}, local: true do |f| %>
+    <h>こんにちは。質問箱QATです</h>
+    <p>ユーザ名：<%= f.text_field :un %></p>
+    <%= f.submit ['質問箱を開く']%>
+<% end %>

@@ -1,7 +1,8 @@
 require 'uri'
 class QuestionsController < ApplicationController
     def box
-        q = Question.where(uname: params[:id])
+        @id = params[:id]
+        q = Question.where(uname: @id)
         if(q.empty?) then
             render "que_empty"
         else
@@ -26,6 +27,10 @@ class QuestionsController < ApplicationController
         else
             render("posts/new/#{@@uname}")
         end
+    end
+
+    def newbox
+        redirect_to "/box/#{params[:un]}"
     end
 
     private
