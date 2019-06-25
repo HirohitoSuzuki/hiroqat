@@ -1,10 +1,11 @@
 require 'uri'
 class QuestionsController < ApplicationController
     def box
+        @check = false
         @id = params[:id]
         q = Question.where(uname: @id)
         if(q.empty?) then
-            render "que_empty"
+            @check = true
         else
             @questions = q
         end
